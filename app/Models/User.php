@@ -11,13 +11,7 @@ class User extends Authenticatable
     use HasApiTokens, Notifiable;
     protected $dates = ['deleted_at'];
 
-    protected $connection = 'master';
-
     protected $table = 'users';
-
-    // protected $appends = [
-    //     'table_name',
-    // ];
 
     /**
      * The attributes that are mass assignable.

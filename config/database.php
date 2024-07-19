@@ -3,25 +3,6 @@
 use Illuminate\Support\Str;
 
 
-//request()->session()->put('table_name', 'auahhhh');
-//
-//$session = request()->session()->get('table_name');
-//
-//print_r($session);
-
-session_start();
-
-$table_name = '';
-
-if (isset($_GET['t'])) {
-    $table_name = $_GET['t'];
-} else {
-    $table_name = $_SESSION['table_name'];
-}
-
-//echo '<h1>' .$_SESSION['table_name'] .'</h1>';
-
-
 return [
 
     /*
@@ -66,11 +47,7 @@ return [
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            // 'database' => env('DB_DATABASE', 'forge'),
-
-            // get session table name user from database master
-            'database' => $table_name,
-            // 'database' => env('DB_DATABASE', 'forge'),
+            'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8mb4',
